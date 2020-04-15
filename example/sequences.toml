@@ -1,0 +1,71 @@
+# ==================================================================================================================== #
+# Objects
+# ==================================================================================================================== #
+[[object]]
+name = 'brush'
+id = 1
+cloud = "objects/brush/brush-100000.ply"
+mesh = "objects/brush/brush.obj"
+
+[[object]]
+name = 'cutter'
+id = 2
+cloud = "objects/cutter/cutter-300000.ply"
+mesh = "objects/cutter/cutter.obj"
+
+
+# ==================================================================================================================== #
+# Cameras
+# ==================================================================================================================== #
+[[camera]]
+name = 'Asus X-tion'
+id = 'xtion-0'
+w = 640
+h = 480
+fx = 533.1710
+fy = 534.3719
+cx = 316.5485
+cy = 241.8261
+k1 = 0.0509
+k2 = -0.2027
+k3 = 0.1420
+p1 = 2.7606e-04
+p2 = 0.0017
+
+[[camera]]
+name = 'Asus X-tion'
+id = 'xtion-robot'
+w = 640
+h = 480
+fx = 533.1710
+fy = 534.3719
+cx = 316.5485
+cy = 241.8261
+k1 = 0.0509
+k2 = -0.2027
+k3 = 0.1420
+p1 = 2.7606e-04
+p2 = 0.0017
+
+
+# ==================================================================================================================== #
+# Sequences
+# ==================================================================================================================== #
+# Parameters per sequence:
+# input: input klg file (required)
+# output: output directory (default: "processed/<input-file-name>")
+# camera: selects the used camera (by id, required)
+# objects: List of object ids present in the sequence (required)
+# datasets: Dataset tags used to generate training data. Defines which datasets this sequence belongs to
+# ==================================================================================================================== #
+
+
+[[run]]
+input = "recordings/static-mallet-torch-1.klg"
+camera = 'xtion-0'
+objects = [1]
+
+[[run]]
+input = "recordings/static-mallet-torch-brush-1-lab.klg"
+camera = 'xtion-0'
+objects = [1, 2]

@@ -1,0 +1,35 @@
+path_elasticfusion = "./third_party/bin/ElasticFusion"
+path_orbslam2 = "./third_party/bin/orbslam2_rgbd_tum"
+path_klg_converter = "./third_party/bin/convert_klg"
+path_object_coordinate_renderer = "./third_party/bin/object_coordinate_renderer"
+path_projective_aligner = "./third_party/bin/projective_aligner"
+
+# Show extra visualiztions that are not required (for debugging and double checking) (default: false)
+show_intermediate_visualizations = false
+
+# Enable/Disable annotation of objects [required by subsequent stages] (default: true)
+enable_annotate_objects = true
+
+# Enable/Disable alignment of objects [required by subsequent stages] (default: true)
+enable_align_objects = true
+
+# Enable/Disable extraction of object-free background model (default: false)
+enable_extract_background_model = false
+
+# Supported values for `reconstruction_method` are "orbslam2" and "elasticfusion"
+reconstruction_method = "orbslam2"
+
+# Compress ply point clouds [can lead to incompatibilities] (default: false)
+compress_ply_files = false
+
+[alignment]
+distance_threshold = 0.009
+
+# Point-to-plane vs point-to-point
+point_to_plane = false
+
+# Enable/Disable initial alignment guess based on global featurse (default: true)
+enable_propose_automatic_alignment = true
+
+[orbslam2]
+tsdf_cubic_size = 3
